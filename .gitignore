@@ -5,9 +5,10 @@
 # By me
 
 .plastic/
-.vsconfig/
+.vsconfig
 UpgradeLog.htm
 ignore.conf
+
 ## 
 /[Ll]ibrary/
 /[Tt]emp/
