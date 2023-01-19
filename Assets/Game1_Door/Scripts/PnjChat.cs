@@ -8,10 +8,10 @@ public class PnjChat : MonoBehaviour
 {
     public Passcode2 passcode2;
     public Text text;
-    private float coor = 7.81f;
     public CanvasGroup CanvasGroup;
     private bool CanTalk;
     private bool AlreadyTalked;
+    private bool FirstTime = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -38,8 +38,9 @@ public class PnjChat : MonoBehaviour
             StartCoroutine(WaitSeconds());
  
         }
-        if (Input.GetKeyUp("e") && CanTalk && AlreadyTalked && passcode2.Choose == true)
+        if ((CanTalk && AlreadyTalked && passcode2.Choose == true && FirstTime) || (Input.GetKeyUp("e") && CanTalk && AlreadyTalked && passcode2.Choose == true))
         {
+            FirstTime = false;
             CanTalk = false;
             CanvasGroup.alpha = 1;
             text.text = " Good job !";
@@ -79,11 +80,18 @@ public class PnjChat : MonoBehaviour
     {
         yield return new WaitForSeconds(2);
         text.text = " Now let's try a last one ";
-        yield return new WaitForSeconds(2);
-        text.text = "If you don't take the right door, you will have to repeat again";
-        yield return new WaitForSeconds(2);
-        CanTalk = true;
+        yield return new WaitForSeconds(3);
+        text.text = "If you don't take the right door, you will have to restart from the beginning";
+        yield return new WaitForSeconds(3);
+        text.text = "I am the number of primary colors, and the number of dimensions in which we live. ";
+        yield return new WaitForSeconds(3);
+        text.text = "I am the number of strikes you get before you're out in baseball, and the number of legs on a tripod. What am I?";
+        
+        yield return new WaitForSeconds(3);
+        text.text = "The answer will give you the path";
+        yield return new WaitForSeconds(1);
         CanvasGroup.alpha = 0;
-
+        CanTalk = true;
     }
+
 }

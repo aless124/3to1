@@ -7,10 +7,7 @@ using UnityEngine.SceneManagement;
 using TMPro;
 public class Passcode : MonoBehaviour
 {
-    string code = "123";
     public int number = 1;
-    int index = 0;
-    string alpha;
     public UnityEvent KeypadClicked;
 
 
