@@ -10,7 +10,7 @@ public class Passcode2 : MonoBehaviour
     public TextMeshPro UiText;
     public GameObject Door;
     public bool Choose = false;
-
+    public CanvasGroup canvasGroup;
     private void Start()
     {
         userInput = "";
@@ -27,11 +27,13 @@ public class Passcode2 : MonoBehaviour
                 UiText.text = "Successful password";
                 Door.transform.position = new Vector3(-0.289999992f, 3, 7.61999989f);
                 Choose = true;
+                canvasGroup.alpha = 1;
             }
             else
             {
                 UiText.text = "wrong password";
                 userInput = "";
+                canvasGroup.alpha = 0;
             }
         }
     }

@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
-public class Door : MonoBehaviour
+
+public class SceneManagement : MonoBehaviour
 {
     public string scene;
-    public static bool Game1 = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,12 +20,16 @@ public class Door : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter(Collision collision)
+    public void ButtonPressed(string scene)
     {
-        
-        Debug.Log("Changement de scene");
-        Game1 = true;
+        if (Door.Game1 && scene == "Playground")
+        {
+
+        }
+        else if (Score.win && scene == "TriangleScene")  // Condition pour vérifié que chaque if est bon   <-  utilisation d'un switch ?
+        {
+
+        }
         SceneManager.LoadScene(scene);
     }
-    
 }
