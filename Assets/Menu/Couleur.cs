@@ -23,7 +23,7 @@ public class Couleur : MonoBehaviour
             image.GetComponent<Image>().color = new Color32(0, 255, 0, 100);
             
         }
-        if (Score.win && Game == 2)  // TOURNAMENT OF POWER
+        if (Door.Game1 && Game == 2)  // TOURNAMENT OF POWER
         {
             image.GetComponent<Image>().color = new Color32(0, 255, 0, 100);
         }

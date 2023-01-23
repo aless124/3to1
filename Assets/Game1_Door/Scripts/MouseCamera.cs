@@ -15,6 +15,7 @@ public class MouseCamera : MonoBehaviour
     {
 
         Cursor.lockState = CursorLockMode.Locked;
+        
 
     }
 
